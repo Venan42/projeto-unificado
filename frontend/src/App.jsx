@@ -4,10 +4,13 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import {
   Activity, Map, BarChart2, Shield, ClipboardList, Building2,
   Settings, Stethoscope, ChevronDown, ChevronRight, Droplets,
-  TrendingUp, FlaskConical, Brain, Menu, X, LogOut, Scale,
+  TrendingUp, FlaskConical, Brain, Menu, X, LogOut, Home
 } from 'lucide-react'
 import { AuthProvider, useAuth } from './contexts/AuthContext.jsx'
 import Login from './pages/Login.jsx'
+
+// --- Importação da Nova Página ---
+import Geral from './pages/Geral.jsx'
 
 import Painel           from './pages/hipertensao/Painel.jsx'
 import Prevalencia      from './pages/hipertensao/Prevalencia.jsx'
@@ -30,19 +33,29 @@ const queryClient = new QueryClient({
 
 const MODULES = [
   {
+    key: 'geral',
+    label: 'Visão Geral',
+    Icon: Home,
+    color: 'text-purple-600',
+    bgActive: 'bg-purple-50',
+    pages: [
+      { to: '/', label: 'Início', Icon: BarChart2 }
+    ],
+  },
+  {
     key: 'hipertensao',
     label: 'Hipertensão',
     Icon: Activity,
     color: 'text-blue-600',
     bgActive: 'bg-blue-50',
     pages: [
-      { to: '/',              label: 'Painel',           Icon: BarChart2    },
-      { to: '/prevalencia',   label: 'Prevalência',      Icon: Map          },
-      { to: '/fatores-risco', label: 'Fatores de Risco', Icon: Shield       },
-      { to: '/mapa',          label: 'Mapa',             Icon: Map          },
-      { to: '/ubs',           label: 'UBS',              Icon: Building2    },
-      { to: '/risco',         label: 'Risco Individual', Icon: Stethoscope  },
-      { to: '/qualidade',     label: 'Qualidade',        Icon: ClipboardList},
+      { to: '/hipertensao',               label: 'Painel',           Icon: BarChart2    },
+      { to: '/hipertensao/prevalencia',   label: 'Prevalência',      Icon: Map          },
+      { to: '/hipertensao/fatores-risco', label: 'Fatores de Risco', Icon: Shield       },
+      { to: '/hipertensao/mapa',          label: 'Mapa',             Icon: Map          },
+      { to: '/hipertensao/ubs',           label: 'UBS',              Icon: Building2    },
+      { to: '/hipertensao/risco',         label: 'Risco Individual', Icon: Stethoscope  },
+      { to: '/hipertensao/qualidade',     label: 'Qualidade',        Icon: ClipboardList},
     ],
   },
   {
@@ -52,10 +65,10 @@ const MODULES = [
     color: 'text-emerald-600',
     bgActive: 'bg-emerald-50',
     pages: [
-      { to: '/diabetes',            label: 'Painel',             Icon: BarChart2    },
-      { to: '/diabetes/controle',   label: 'Controle Glicêmico', Icon: FlaskConical },
-      { to: '/diabetes/tendencias', label: 'Tendências HbA1c',   Icon: TrendingUp   },
-      { to: '/diabetes/risco',      label: 'Risco Glicêmico',    Icon: Brain        },
+      { to: '/diabetes',            label: 'Painel',            Icon: BarChart2    },
+      { to: '/diabetes/controle',   label: 'Controle Glicêmico',Icon: FlaskConical },
+      { to: '/diabetes/tendencias', label: 'Tendências HbA1c',  Icon: TrendingUp   },
+      { to: '/diabetes/risco',      label: 'Risco Glicêmico',   Icon: Brain        },
     ],
   },
 ]
@@ -89,7 +102,7 @@ function SidebarModule({ mod, defaultOpen }) {
             <NavLink
               key={to}
               to={to}
-              end={to === '/' || to === '/diabetes'}
+              end={to === '/' || to === '/diabetes' || to === '/hipertensao'}
               className={({ isActive }) =>
                 `flex items-center gap-2 px-2 py-1.5 rounded-md text-sm transition-colors ${
                   isActive
@@ -200,19 +213,24 @@ function Layout() {
 
         <main className="flex-1 p-6 max-w-7xl mx-auto w-full">
           <Routes>
-            {/* Hipertensão */}
-            <Route path="/"              element={<Painel />}          />
-            <Route path="/prevalencia"   element={<Prevalencia />}     />
-            <Route path="/fatores-risco" element={<FatoresRisco />}    />
-            <Route path="/mapa"          element={<MapaPage />}        />
-            <Route path="/ubs"           element={<UBS />}             />
-            <Route path="/risco"         element={<RiscoIndividual />} />
-            <Route path="/qualidade"     element={<Qualidade />}       />
+            {/* --- Geral --- */}
+            <Route path="/" element={<Geral />} />
+
+            {/* --- Hipertensão (Agora sob o path /hipertensao) --- */}
+            <Route path="/hipertensao"               element={<Painel />}          />
+            <Route path="/hipertensao/prevalencia"   element={<Prevalencia />}     />
+            <Route path="/hipertensao/fatores-risco" element={<FatoresRisco />}    />
+            <Route path="/hipertensao/mapa"          element={<MapaPage />}        />
+            <Route path="/hipertensao/ubs"           element={<UBS />}             />
+            <Route path="/hipertensao/risco"         element={<RiscoIndividual />} />
+            <Route path="/hipertensao/qualidade"     element={<Qualidade />}       />
+            
             {/* Diabetes */}
-            <Route path="/diabetes"              element={<DmPainel />}     />
-            <Route path="/diabetes/controle"     element={<DmControle />}   />
-            <Route path="/diabetes/tendencias"   element={<DmTendencias />} />
-            <Route path="/diabetes/risco"        element={<DmRisco />}      />
+            <Route path="/diabetes"                  element={<DmPainel />}     />
+            <Route path="/diabetes/controle"         element={<DmControle />}   />
+            <Route path="/diabetes/tendencias"       element={<DmTendencias />} />
+            <Route path="/diabetes/risco"            element={<DmRisco />}      />
+            
             {/* Admin */}
             <Route path="/admin" element={<Admin />} />
           </Routes>
