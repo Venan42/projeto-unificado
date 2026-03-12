@@ -9,4 +9,5 @@ data/cache/
 models/
 *.pkl
 *.parquet
-.log
+logs/
+*.log
