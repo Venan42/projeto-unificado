@@ -7755,3 +7755,11 @@ LINE 3:         (no_bairro_raw, no_bairro_canonico, no_loteamento, t...
 2026-03-12 10:47:50 | INFO     | shared.controle                | Tabela tb_controle_processamento pronta.
 2026-03-12 10:59:53 | INFO     | shared.controle                | Tabela tb_controle_processamento pronta.
 2026-03-12 11:15:02 | INFO     | shared.controle                | Tabela tb_controle_processamento pronta.
+2026-03-12 12:14:45 | INFO     | main                           | API encerrada.
+2026-03-12 12:14:49 | INFO     | main                           | ============================================================
+2026-03-12 12:14:49 | INFO     | main                           | Plataforma de Saúde Pública — API iniciada
+2026-03-12 12:14:49 | INFO     | main                           | Ambiente: development
+2026-03-12 12:14:49 | INFO     | main                           | Banco PEC: localhost:5432/Esus (somente leitura)
+2026-03-12 12:14:49 | INFO     | main                           | Banco Admin: localhost:5432/Esus (leitura/escrita)
+2026-03-12 12:14:49 | INFO     | main                           | Documentação: http://localhost:8000/docs
+2026-03-12 12:14:49 | INFO     | main                           | ============================================================
