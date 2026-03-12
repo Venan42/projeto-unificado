@@ -7754,3 +7754,61 @@ LINE 3:         (no_bairro_raw, no_bairro_canonico, no_loteamento, t...
 2026-03-12 10:44:03 | INFO     | shared.controle                | Tabela tb_controle_processamento pronta.
 2026-03-12 10:47:50 | INFO     | shared.controle                | Tabela tb_controle_processamento pronta.
 2026-03-12 10:59:53 | INFO     | shared.controle                | Tabela tb_controle_processamento pronta.
+2026-03-12 11:44:05 | INFO     | main                           | ============================================================
+2026-03-12 11:44:05 | INFO     | main                           | Plataforma de Saúde Pública — API iniciada
+2026-03-12 11:44:05 | INFO     | main                           | Ambiente: development
+2026-03-12 11:44:05 | INFO     | main                           | Banco PEC: localhost:5432/esus (somente leitura)
+2026-03-12 11:44:05 | INFO     | main                           | Banco Admin: localhost:5432/esus (leitura/escrita)
+2026-03-12 11:44:05 | INFO     | main                           | Documentação: http://localhost:8000/docs
+2026-03-12 11:44:05 | INFO     | main                           | ============================================================
+2026-03-12 11:49:31 | INFO     | main                           | API encerrada.
+2026-03-12 11:49:34 | INFO     | main                           | ============================================================
+2026-03-12 11:49:34 | INFO     | main                           | Plataforma de Saúde Pública — API iniciada
+2026-03-12 11:49:34 | INFO     | main                           | Ambiente: development
+2026-03-12 11:49:34 | INFO     | main                           | Banco PEC: localhost:5432/esus (somente leitura)
+2026-03-12 11:49:34 | INFO     | main                           | Banco Admin: localhost:5432/esus (leitura/escrita)
+2026-03-12 11:49:34 | INFO     | main                           | Documentação: http://localhost:8000/docs
+2026-03-12 11:49:34 | INFO     | main                           | ============================================================
+2026-03-12 11:49:34 | INFO     | main                           | API encerrada.
+2026-03-12 11:49:36 | INFO     | main                           | ============================================================
+2026-03-12 11:49:36 | INFO     | main                           | Plataforma de Saúde Pública — API iniciada
+2026-03-12 11:49:36 | INFO     | main                           | Ambiente: development
+2026-03-12 11:49:36 | INFO     | main                           | Banco PEC: localhost:5432/esus (somente leitura)
+2026-03-12 11:49:36 | INFO     | main                           | Banco Admin: localhost:5432/esus (leitura/escrita)
+2026-03-12 11:49:36 | INFO     | main                           | Documentação: http://localhost:8000/docs
+2026-03-12 11:49:36 | INFO     | main                           | ============================================================
+2026-03-12 11:49:55 | INFO     | auth.routes                    | Usuário criado: aaaaa (perfil: leitor)
+2026-03-12 11:50:37 | INFO     | auth.routes                    | Usuário criado: admin@admin (perfil: admin)
+2026-03-12 11:51:08 | INFO     | main                           | API encerrada.
+2026-03-12 11:51:11 | INFO     | main                           | ============================================================
+2026-03-12 11:51:11 | INFO     | main                           | Plataforma de Saúde Pública — API iniciada
+2026-03-12 11:51:11 | INFO     | main                           | Ambiente: development
+2026-03-12 11:51:11 | INFO     | main                           | Banco PEC: localhost:5432/esus (somente leitura)
+2026-03-12 11:51:11 | INFO     | main                           | Banco Admin: localhost:5432/esus (leitura/escrita)
+2026-03-12 11:51:11 | INFO     | main                           | Documentação: http://localhost:8000/docs
+2026-03-12 11:51:11 | INFO     | main                           | ============================================================
+2026-03-12 11:56:09 | INFO     | main                           | API encerrada.
+2026-03-12 11:56:11 | INFO     | main                           | ============================================================
+2026-03-12 11:56:11 | INFO     | main                           | Plataforma de Saúde Pública — API iniciada
+2026-03-12 11:56:11 | INFO     | main                           | Ambiente: development
+2026-03-12 11:56:11 | INFO     | main                           | Banco PEC: localhost:5432/esus (somente leitura)
+2026-03-12 11:56:11 | INFO     | main                           | Banco Admin: localhost:5432/esus (leitura/escrita)
+2026-03-12 11:56:11 | INFO     | main                           | Documentação: http://localhost:8000/docs
+2026-03-12 11:56:11 | INFO     | main                           | ============================================================
+2026-03-12 11:56:11 | INFO     | main                           | API encerrada.
+2026-03-12 11:56:13 | INFO     | main                           | ============================================================
+2026-03-12 11:56:13 | INFO     | main                           | Plataforma de Saúde Pública — API iniciada
+2026-03-12 11:56:13 | INFO     | main                           | Ambiente: development
+2026-03-12 11:56:13 | INFO     | main                           | Banco PEC: localhost:5432/esus (somente leitura)
+2026-03-12 11:56:13 | INFO     | main                           | Banco Admin: localhost:5432/esus (leitura/escrita)
+2026-03-12 11:56:13 | INFO     | main                           | Documentação: http://localhost:8000/docs
+2026-03-12 11:56:13 | INFO     | main                           | ============================================================
+2026-03-12 12:01:12 | INFO     | main                           | API encerrada.
+2026-03-12 12:01:14 | INFO     | main                           | ============================================================
+2026-03-12 12:01:14 | INFO     | main                           | Plataforma de Saúde Pública — API iniciada
+2026-03-12 12:01:14 | INFO     | main                           | Ambiente: development
+2026-03-12 12:01:14 | INFO     | main                           | Banco PEC: localhost:5432/esus (somente leitura)
+2026-03-12 12:01:14 | INFO     | main                           | Banco Admin: localhost:5432/esus (leitura/escrita)
+2026-03-12 12:01:14 | INFO     | main                           | Documentação: http://localhost:8000/docs
+2026-03-12 12:01:14 | INFO     | main                           | ============================================================
+2026-03-12 12:01:40 | INFO     | main                           | API encerrada.

@@ -37,7 +37,7 @@ class UsuarioCreate(BaseModel):
     nome: str
     email: str
     senha: str
-    perfil: str = "leitor"
+    perfil: str = "usuario_equipe"
 
 
 class UsuarioResponse(BaseModel):
@@ -109,8 +109,13 @@ def listar_usuarios(usuario: dict = Depends(exigir_perfil("admin"))):
 @router.post("/usuarios", summary="Criar novo usuário (admin)", status_code=201)
 def criar_usuario(body: UsuarioCreate, usuario: dict = Depends(exigir_perfil("admin"))):
     """Cria um novo usuário. Requer perfil admin."""
-    if body.perfil not in ("admin", "operador", "leitor"):
-        raise HTTPException(status_code=400, detail="Perfil inválido. Use: admin, operador ou leitor")
+# Adicionei os novos perfis na tupla de validação
+    perfis_validos = ("admin", "operador", "leitor", "usuario_gestor", "usuario_equipe")
+    if body.perfil not in perfis_validos:
+        raise HTTPException(
+            status_code=400, 
+            detail=f"Perfil inválido. Use: {', '.join(perfis_validos)}"
+        )
 
     existente = buscar_usuario_por_email(body.email)
     if existente:
