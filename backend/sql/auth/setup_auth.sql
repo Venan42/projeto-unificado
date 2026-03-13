@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS auth.tb_usuarios (
     ds_email        VARCHAR(200) NOT NULL UNIQUE,
     ds_senha_hash   VARCHAR(300) NOT NULL,
     tp_perfil       VARCHAR(20)  NOT NULL DEFAULT 'leitor'
-                    CHECK (tp_perfil IN ('admin', 'operador', 'leitor')),
+                    CHECK (tp_perfil IN ('admin', 'usuario_equipe', 'usuario_gestor')),
     st_ativo        BOOLEAN      NOT NULL DEFAULT TRUE,
     dt_criacao      TIMESTAMP    NOT NULL DEFAULT NOW(),
     dt_ultimo_login TIMESTAMP
@@ -36,6 +36,16 @@ VALUES (
     'admin@admin.com',
     '$2b$12$O0zc9Gaucxpjvb8BBddM1eT/nxbQFPZPHY75XHPC9gDwPXOs.RpR2',
     'admin'
+) (
+    'Gestor',
+    'gestor@gestor.com',
+    '$2a$12$gAJq/nZkSzC1exOuOOgzjuIkw8VwpWl74Obp/xR7WDq7iscHSExn.',
+    'usuario_gestor'
+) (
+    'Equipe',
+    'equipe@equipe.com',
+    '$2a$12$1VE1oFEn0d8DBnZ9JX/XIeWTOOTV3pkvvNmMqBNWLT353FNR6Z0b.',
+    'usuario_equipe'
 ) ON CONFLICT (ds_email) DO NOTHING;
 
 COMMENT ON TABLE auth.tb_usuarios IS

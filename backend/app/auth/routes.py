@@ -110,7 +110,7 @@ def listar_usuarios(usuario: dict = Depends(exigir_perfil("admin"))):
 def criar_usuario(body: UsuarioCreate, usuario: dict = Depends(exigir_perfil("admin"))):
     """Cria um novo usuário. Requer perfil admin."""
 # Adicionei os novos perfis na tupla de validação
-    perfis_validos = ("admin", "operador", "leitor", "usuario_gestor", "usuario_equipe")
+    perfis_validos = ("admin", "usuario_gestor", "usuario_equipe")
     if body.perfil not in perfis_validos:
         raise HTTPException(
             status_code=400, 
