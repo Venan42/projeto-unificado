@@ -40,12 +40,12 @@ VALUES (
     'Gestor',
     'gestor@gestor.com',
     '$2a$12$gAJq/nZkSzC1exOuOOgzjuIkw8VwpWl74Obp/xR7WDq7iscHSExn.',
-    'admin'
+    'leitor'
 ), (
     'Equipe',
     'equipe@equipe.com',
     '$2a$12$1VE1oFEn0d8DBnZ9JX/XIeWTOOTV3pkvvNmMqBNWLT353FNR6Z0b.',
-    'operador'
+    'leitor'
 ) ON CONFLICT (ds_email) DO NOTHING;
 
 COMMENT ON TABLE auth.tb_usuarios IS
